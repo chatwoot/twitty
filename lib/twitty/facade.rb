@@ -14,6 +14,12 @@ module Twitty
       end
     end
 
+
+    def generate_crc(crc_token)
+      hash = OpenSSL::HMAC.digest('sha256', config.consumer_secret, crc_token)
+      return Base64.encode64(hash).strip!
+    end
+
     private
 
     def define_actions(action, data)
