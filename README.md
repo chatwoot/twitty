@@ -22,7 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialize twitty in your project in an intializer or as required  
+
+```
+$twitter = Twitty::Facade.new do |config|
+ config.consumer_key = 'consumer key '
+ config.consumer_secret = 'consumer secret'
+ config.access_token = 'access token'
+ config.access_token_secret = 'access token secret'
+ config.base_url = 'https://api.twitter.com'
+ config.environment = 'chatwootdev'
+end
+```
+
+Use twitty to register your webhook on twitter as below
+
+```
+#fetch existing webhooks
+$twitter.fetch_webhooks
+
+#register a new webhook
+$twitter.register_webhooks(url: "https://xyc.com/webhooks/twitter")
+```
+
+
 
 ## Development
 
