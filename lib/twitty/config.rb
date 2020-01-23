@@ -5,8 +5,7 @@ module Twitty
                   :access_token,
                   :access_token_secret,
                   :base_url,
-                  :open_timeout,
-                  :open_timeout
+                  :environment
                
 
     def initialize(params = {})
@@ -16,9 +15,6 @@ module Twitty
       @consumer_secret = params[:consumer_secret]
       @access_token = params[:access_token]
       @access_token_secret = params[:access_token_secret]
-
-      @open_timeout = params[:open_timeout]
-      @read_timeout = params[:read_timeout]
     end
   end
 end
