@@ -17,12 +17,18 @@ module Twitty
     private
 
     def define_actions(action, data)
+      validate_params(action, data)
       response = send_request(api_url(action, data), api_method(action),
                               api_params(action, data))
 
     end
 
     private
+
+    def validate_params(action, data)
+      missing_params = (API_CONFIG[action][:required_params] - data.keys.map(&:to_sym))
+      raise Twitty::Errors::MissingParams, missing_params.join(',') unless missing_params.empty?
+    end
 
     def api_params(action, data)
       #Twitty::ParamsBuilder.build(action, data, config)
