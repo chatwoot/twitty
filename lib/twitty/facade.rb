@@ -38,7 +38,7 @@ module Twitty
     end
 
     def api_url(action, data)
-      "#{config.base_url}#{API_CONFIG[action][:endpoint]}" % data
+      "#{config.base_url}#{API_CONFIG[action][:endpoint]}" % data.merge(env: config.environment)
     end
 
     def api_method(action)

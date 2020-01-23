@@ -9,8 +9,7 @@ RSpec.describe Twitty::Facade do
       config.access_token = 'TEST_ACCESS_TOKEN'
       config.access_token_secret = 'TEST_ACCESS_SECRET'
       config.base_url = 'https://api.twitter.com/'
-      config.open_timeout = 30
-      config.read_timeout = 30
+      config.environment = "chatwoot_test"
     end
   end
 
