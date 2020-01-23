@@ -10,7 +10,7 @@ RSpec.describe Twitty::Config do
         access_token_secret: 'TEST_ACCESS_SECRET',
         base_url: 'https://api.twitter.com/',
         open_timeout: 30,
-        open_timeout: 30,
+        read_timeout: 30,
       }
 
       @config = Twitty::Config.new(@params)

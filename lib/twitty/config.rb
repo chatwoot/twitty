@@ -6,7 +6,7 @@ module Twitty
                   :access_token_secret,
                   :base_url,
                   :open_timeout,
-                  :open_timeout
+                  :read_timeout
                
 
     def initialize(params = {})
