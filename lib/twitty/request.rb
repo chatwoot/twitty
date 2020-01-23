@@ -1,7 +1,3 @@
-require 'oauth'
-require 'json'
-require 'pry'
-
 module Twitty
   class Request
     attr_reader :url, :type, :payload, :config
