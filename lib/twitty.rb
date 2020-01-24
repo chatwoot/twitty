@@ -6,9 +6,10 @@ require "twitty/version"
 require "twitty/constants"
 require "twitty/config"
 require "twitty/payload"
-require "twitty/facade"
 require "twitty/request"
+require "twitty/response"
 require "twitty/errors"
+require "twitty/facade"
 
 module Twitty
   class Error < StandardError; end
