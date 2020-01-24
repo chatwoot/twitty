@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     twitty (0.1.0)
+      oauth
 
 GEM
   remote: https://rubygems.org/
