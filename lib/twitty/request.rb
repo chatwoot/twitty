@@ -36,5 +36,13 @@ module Twitty
     def api_post
       api_client.post(url, payload, HEADERS)
     end
+
+    def api_put
+      api_client.put(url, payload, HEADERS)
+    end
+
+    def api_delete
+      api_client.delete(url, HEADERS)
+    end
   end
 end
