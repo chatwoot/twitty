@@ -21,6 +21,12 @@ module Twitty
       return Base64.encode64(hash).strip!
     end
 
+
+    def override_client_tokens(access_token, access_token_secret)
+      config.access_token = access_token
+      config.access_token_secret = access_token_secret
+    end
+
     private
 
     def define_actions(action, data)
