@@ -12,6 +12,18 @@ module Twitty
         method: :post,
         endpoint: '/1.1/account_activity/all/%{env}/webhooks.json?url=%{url}',
         required_params: [:url]
+      },
+
+      send_direct_message: {
+        method: :post,
+        endpoint: '/1.1/direct_messages/events/new.json',
+        required_params: [:message, :recipient_id]
+      },
+
+      send_tweet_reply: {
+        method: :post,
+        endpoint: '/1.1/statuses/update.json',
+        required_params: [:tweet, :reply_to_tweet_id]
       }
   }.freeze
   end

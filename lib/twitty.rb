@@ -5,6 +5,7 @@ require 'json'
 require "twitty/version"
 require "twitty/constants"
 require "twitty/config"
+require "twitty/payload"
 require "twitty/facade"
 require "twitty/request"
 require "twitty/errors"

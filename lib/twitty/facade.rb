@@ -3,6 +3,7 @@
 module Twitty
   class Facade
     include Twitty::Constants
+    include Twitty::Payload
 
     def initialize
       yield(config) if block_given?
@@ -37,8 +38,7 @@ module Twitty
     end
 
     def api_params(action, data)
-      #Twitty::ParamsBuilder.build(action, data, config)
-      data
+      build_payload(action, data)
     end
 
     def send_request(url, type, params)
@@ -50,7 +50,8 @@ module Twitty
     end
 
     def api_url(action, data)
-      "#{config.base_url}#{API_CONFIG[action][:endpoint]}" % data.merge(env: config.environment)
+      url_params = data.merge(env: config.environment).map { |k,v| [k, CGI.escape(v)] }.to_h
+      "#{config.base_url}#{API_CONFIG[action][:endpoint]}" % url_params
     end
 
     def api_method(action)
