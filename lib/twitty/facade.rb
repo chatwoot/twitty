@@ -27,7 +27,7 @@ module Twitty
       validate_params(action, data)
       response = send_request(api_url(action, data), api_method(action),
                               api_params(action, data))
-
+      response = Twitty::Response.new(response)
     end
 
     private
