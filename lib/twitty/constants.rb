@@ -14,6 +14,18 @@ module Twitty
         required_params: [:url]
       },
 
+      subscribe_webhook: {
+        method: :post,
+        endpoint: '/1.1/account_activity/all/%{env}/subscriptions.json',
+        required_params: []
+      },
+
+      unsubscribe_webhook: {
+        method: :delete,
+        endpoint: '/1.1/account_activity/all/%{env}/webhooks/%{id}.json',
+        required_params: [:id]
+      },
+
       send_direct_message: {
         method: :post,
         endpoint: '/1.1/direct_messages/events/new.json',
