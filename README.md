@@ -1,8 +1,6 @@
 # Twitty
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/twitty`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby client for Twitter Business APIs
 
 ## Installation
 
@@ -22,7 +20,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialize twitty in your project in an intializer or as required  
+
+```
+$twitter = Twitty::Facade.new do |config|
+ config.consumer_key = 'consumer key '
+ config.consumer_secret = 'consumer secret'
+ config.access_token = 'access token'
+ config.access_token_secret = 'access token secret'
+ config.base_url = 'https://api.twitter.com'
+ config.environment = 'chatwootdev'
+end
+```
+
+Use twitty to register your webhook on twitter as below
+
+```
+#fetch existing webhooks
+$twitter.fetch_webhooks
+
+#register a new webhook
+$twitter.register_webhooks(url: "https://xyc.com/webhooks/twitter")
+```
+
+
 
 ## Development
 
@@ -32,7 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/twitty. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/chatwoot/twitty. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.chatwoot.com/docs/code-of-conduct) code of conduct.
 
 ## License
 
@@ -40,4 +61,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Twitty project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/twitty/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Twitty project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://www.chatwoot.com/docs/code-of-conduct).
