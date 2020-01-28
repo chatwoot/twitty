@@ -26,7 +26,7 @@ module Twitty
             }
           }
         }
-      }.to_s
+      }.to_json
     end
 
     def send_tweet_reply_payload
