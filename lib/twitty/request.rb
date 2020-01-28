@@ -2,7 +2,7 @@ module Twitty
   class Request
     attr_reader :url, :type, :payload, :config
 
-    HEADERS = {"content-type" => "application/json"}
+    HEADERS = {"Content-Type" => "application/json; charset=utf-8"}
 
     def self.execute(params)
       new(params)
