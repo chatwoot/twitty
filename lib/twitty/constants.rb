@@ -39,13 +39,13 @@ module Twitty
         required_params: [:tweet, :reply_to_tweet_id]
       },
 
-      request_token: {
+      request_oauth_token: {
         method: :post,
         endpoint: '/oauth/request_token',
-        required_params: [:oauth_callback]
+        required_params: [:url]
       },
 
-      get_access_token: {
+      access_token: {
         method: :post,
         endpoint: '/oauth/access_token',
         required_params: [:oauth_verifier]

@@ -35,5 +35,17 @@ module Twitty
         "in_reply_to_status_id": @payload[:reply_to_tweet_id]
       }
     end
+
+    def request_oauth_token_payload
+      {
+        oauth_callback: @payload[:url]
+      }
+    end
+
+    def access_token_payload
+      {
+        oauth_verifier: @payload[:oauth_verifier]
+      }
+    end
   end
 end
