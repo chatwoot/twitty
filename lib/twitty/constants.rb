@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Twitty
   module Constants
     API_CONFIG = {
@@ -36,6 +37,18 @@ module Twitty
         method: :post,
         endpoint: '/1.1/statuses/update.json',
         required_params: [:tweet, :reply_to_tweet_id]
+      },
+
+      request_token: {
+        method: :post,
+        endpoint: '/oauth/request_token',
+        required_params: [:oauth_callback]
+      },
+
+      get_access_token: {
+        method: :post,
+        endpoint: '/oauth/access_token',
+        required_params: [:oauth_verifier]
       }
   }.freeze
   end
