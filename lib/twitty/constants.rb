@@ -48,7 +48,7 @@ module Twitty
       access_token: {
         method: :post,
         endpoint: '/oauth/access_token',
-        required_params: [:oauth_verifier]
+        required_params: [:oauth_token, :oauth_verifier]
       }
   }.freeze
   end

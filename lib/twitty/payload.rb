@@ -44,6 +44,7 @@ module Twitty
 
     def access_token_payload
       {
+        oauth_token: @payload[:oauth_token],
         oauth_verifier: @payload[:oauth_verifier]
       }
     end
