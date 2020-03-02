@@ -13,7 +13,7 @@ RSpec.describe Twitty::Request do
   @config = Twitty::Config.new(config_params)
 
   @params = { config: @config,
-              url: "htt",
+              url: "https://api.twitter.com/test",
               payload: { test: "test"}
             }
   end
@@ -27,7 +27,7 @@ RSpec.describe Twitty::Request do
     get_params = @params.merge(type: 'get')
     request = Twitty::Request.new(get_params)
 
-    expect(OAuth::AccessToken).to receive(:get).once
+    expect(request).to receive(:api_get).once
     request.execute
   end
 
@@ -35,7 +35,7 @@ RSpec.describe Twitty::Request do
     post_params = @params.merge(type: 'post')
     request = Twitty::Request.new(post_params)
 
-    expect(OAuth::AccessToken).to receive(:post).once
+    expect(request).to receive(:api_post).once
     request.execute
   end
 end
