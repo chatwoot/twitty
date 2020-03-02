@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 references:
   unit: &unit
     run:
@@ -21,9 +21,9 @@ references:
         - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 jobs:
-  "ruby-2.6.3":
+  "ruby-2.6":
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: circleci/ruby:2.6
     steps:
       - checkout
       - <<: *restore
@@ -35,4 +35,4 @@ workflows:
   version: 2
   build:
     jobs:
-      - "ruby-2.6.3"
+      - "ruby-2.6"
