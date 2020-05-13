@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://www.chatwoot.com"
   spec.license       = "MIT"
 
-  s.metadata = {
+  spec.metadata = {
     "bug_tracker_uri"   => "https://github.com/chatwoot/twitty/issues",
     "homepage_uri"      => "https://github.com/chatwoot/twitty",
     "source_code_uri"   => "https://github.com/chatwoot/twitty",
