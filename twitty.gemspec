@@ -6,13 +6,19 @@ require "twitty/version"
 Gem::Specification.new do |spec|
   spec.name          = "twitty"
   spec.version       = Twitty::VERSION
-  spec.authors       = ["Subin T P"]
-  spec.email         = ["subin@thoughtwoot.com"]
+  spec.authors       = ["Subin T P", "Pranav Raj S", "Sojan Jose"]
+  spec.email         = ["hello@thoughtwoot.com","subin@thoughtwoot.com", "pranav@thoughtwoot.com", "sojan@thoughtwoot.com"]
 
   spec.summary       = %q{Twitter API wrapper}
-  spec.description   = %q{Twitter API wrapper}
+  spec.description   = %q{Twitty makes working with the twitter account subscriptions APIs much easier}
   spec.homepage      = "https://www.chatwoot.com"
   spec.license       = "MIT"
+
+  spec.metadata = {
+    "bug_tracker_uri"   => "https://github.com/chatwoot/twitty/issues",
+    "homepage_uri"      => "https://github.com/chatwoot/twitty",
+    "source_code_uri"   => "https://github.com/chatwoot/twitty",
+  }
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -23,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.17"
+  spec.add_development_dependency "bundler", "~> 2"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_runtime_dependency "oauth"
