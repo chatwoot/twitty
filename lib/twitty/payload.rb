@@ -1,6 +1,6 @@
 module Twitty
   module Payload
-    EMPTY_PAYLOAD_ACTIONS = %w[fetch_webhooks register_webhook subscribe_webhook unsubscribe_webhook].freeze
+    EMPTY_PAYLOAD_ACTIONS = %w[fetch_webhooks register_webhook unregister_webhook fetch_subscriptions create_subscription remove_subscription].freeze
 
     EMPTY_PAYLOAD_ACTIONS.each do |action|
       define_method "#{action.to_s}_payload" do
