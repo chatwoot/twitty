@@ -1,6 +1,8 @@
 name: Ruby Gem
 
-on: push
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   build:
