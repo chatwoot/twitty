@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    twitty (0.1.0)
+    twitty (0.1.2)
       oauth
 
 GEM

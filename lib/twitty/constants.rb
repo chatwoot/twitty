@@ -61,7 +61,37 @@ module Twitty
         method: :post,
         endpoint: '/oauth/access_token',
         required_params: [:oauth_token, :oauth_verifier]
+      },
+
+      destroy_tweet: {
+        method: :post,
+        endpoint: '/1.1/statuses/destroy/%{tweet_id}.json',
+        required_params: [:tweet_id]
+      },
+
+      retweet: {
+        method: :post,
+        endpoint: '/1.1/statuses/retweet/%{tweet_id}.json',
+        required_params: [:tweet_id]
+      },
+
+      unretweet: {
+        method: :post,
+        endpoint: '/1.1/statuses/unretweet/%{tweet_id}.json',
+        required_params: [:tweet_id]
+      },
+
+      like_tweet: {
+        method: :post,
+        endpoint: '/1.1/favorites/create.json',
+        required_params: [:tweet_id]
+      },
+
+      unlike_tweet: {
+        method: :post,
+        endpoint: '/1.1/favorites/destroy.json',
+        required_params: [:tweet_id]
       }
-  }.freeze
+    }.freeze
   end
 end

@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module Twitty
   module Payload
-    EMPTY_PAYLOAD_ACTIONS = %w[fetch_webhooks register_webhook unregister_webhook fetch_subscriptions create_subscription remove_subscription].freeze
+    EMPTY_PAYLOAD_ACTIONS = %w[fetch_webhooks register_webhook unregister_webhook fetch_subscriptions
+                               create_subscription remove_subscription destroy_tweet retweet unretweet].freeze
 
     EMPTY_PAYLOAD_ACTIONS.each do |action|
       define_method "#{action.to_s}_payload" do
@@ -46,6 +49,18 @@ module Twitty
       {
         oauth_token: @payload[:oauth_token],
         oauth_verifier: @payload[:oauth_verifier]
+      }
+    end
+
+    def like_tweet_payload
+      {
+        "id": @payload[:tweet_id]
+      }
+    end
+
+    def unlike_tweet_payload
+      {
+        "id": @payload[:tweet_id]
       }
     end
   end
