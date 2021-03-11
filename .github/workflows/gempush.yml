@@ -33,10 +33,10 @@ jobs:
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
         chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:github: Bearer ${{ env.GEM_HOST_API_KEY }}\n" > $HOME/.gem/credentials
+        printf -- "---\n:github: Bearer ${{ env.GPR_AUTH_TOKEN }}\n" > $HOME/.gem/credentials
         gem build *.gemspec
         gem push --KEY github --host https://rubygems.pkg.github.com/${{ env.OWNER }} *.gem
       continue-on-error: true
       env:
-        GEM_HOST_API_KEY: ${{secrets.GPR_AUTH_TOKEN}}
+        GPR_AUTH_TOKEN: ${{secrets.GPR_AUTH_TOKEN}}
         OWNER: chatwoot
