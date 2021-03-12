@@ -15,12 +15,10 @@ module Twitty
       end
     end
 
-
     def generate_crc(crc_token)
       hash = OpenSSL::HMAC.digest('sha256', config.consumer_secret, crc_token)
-      return Base64.encode64(hash).strip!
+      Base64.encode64(hash).strip!
     end
-
 
     def override_client_tokens(access_token, access_token_secret)
       config.access_token = access_token
@@ -33,10 +31,8 @@ module Twitty
       validate_params(action, data)
       response = send_request(api_url(action, data), api_method(action),
                               api_params(action, data))
-      response = Twitty::Response.new(response)
+      Twitty::Response.new(response)
     end
-
-    private
 
     def validate_params(action, data)
       missing_params = (API_CONFIG[action][:required_params] - data.keys.map(&:to_sym))
