@@ -1,5 +1,5 @@
-require 'oauth'
-require 'json'
+require "oauth"
+require "json"
 
 require "twitty/version"
 require "twitty/constants"

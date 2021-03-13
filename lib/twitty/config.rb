@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Twitty
   class Config
     attr_accessor :consumer_key,
@@ -6,7 +8,6 @@ module Twitty
                   :access_token_secret,
                   :base_url,
                   :environment
-               
 
     def initialize(params = {})
       @base_url = params[:base_url]
