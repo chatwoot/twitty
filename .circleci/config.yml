@@ -20,6 +20,10 @@ references:
       paths:
         - ./vendor/bundle
       key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+  rubocop: &rubocop
+    run:
+      name: Run rubocop
+      command: bundle exec rubocop
 jobs:
   "ruby-2.7":
     docker:
@@ -29,6 +33,7 @@ jobs:
       - <<: *restore
       - <<: *bundle
       - <<: *save
+      - <<: *rubocop
       - <<: *unit
 
 workflows:
