@@ -15,25 +15,24 @@ RSpec.describe Twitty::Config do
       @config = Twitty::Config.new(@params)
     end
 
-    it 'should create instance' do
+    it 'creates instance' do
       expect(@config).to be_a Twitty::Config
     end
 
-    it 'should set consumer_key' do
+    it 'sets consumer_key' do
       expect(@config.consumer_key).to eql @params[:consumer_key]
     end
 
-    it 'should set consumer secret' do
+    it 'sets consumer secret' do
       expect(@config.consumer_secret).to eql @params[:consumer_secret]
     end
 
-    it 'should set access token' do
+    it 'sets access token' do
       expect(@config.access_token).to eql @params[:access_token]
     end
 
-    it 'should set access token secret' do
+    it 'sets access token secret' do
       expect(@config.access_token_secret).to eql @params[:access_token_secret]
     end
   end
 end
-
