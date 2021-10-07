@@ -2,7 +2,7 @@
 
 module Twitty::Payload
   EMPTY_PAYLOAD_ACTIONS = %w[fetch_webhooks register_webhook unregister_webhook fetch_subscriptions
-                             create_subscription remove_subscription destroy_tweet retweet unretweet].freeze
+                             create_subscription remove_subscription destroy_tweet retweet unretweet user_show ].freeze
 
   EMPTY_PAYLOAD_ACTIONS.each do |action|
     define_method "#{action}_payload" do
