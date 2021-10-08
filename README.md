@@ -40,7 +40,7 @@ Use twitty to register your webhook on twitter as below
 $twitter.fetch_webhooks
 
 #register a new webhook
-$twitter.register_webhooks(url: "https://xyc.com/webhooks/twitter")
+$twitter.register_webhook(url: "https://xyc.com/webhooks/twitter")
 ```
 
 You should handle the crc checks from twitter by processing the get requests to your webhooks url with a controller method similar to

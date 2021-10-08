@@ -90,6 +90,12 @@ module Twitty::Constants
       method: :post,
       endpoint: '/1.1/favorites/destroy.json',
       required_params: [:tweet_id]
+    },
+
+    user_show: {
+      method: :get,
+      endpoint: '/1.1/users/show.json?screen_name=%<screen_name>s',
+      required_params: [:screen_name]
     }
   }.freeze
 end
