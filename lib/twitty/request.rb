@@ -22,14 +22,14 @@ class Twitty::Request
 
   def api_client
     @api_client ||= begin
-      consumer = OAuth::Consumer.new(config.consumer_key, config.consumer_secret, { site: config.base_url })
+      consumer = OAuth::Consumer.new("1BJXcUGYVi8JFl2jqZ9a79nQ5", config.consumer_secret, { site: config.base_url })
       token = { oauth_token: config.access_token, oauth_token_secret: config.access_token_secret }
       OAuth::AccessToken.from_hash(consumer, token)
     end
   end
 
   def api_get
-    api_client.get(url, HEADERS)
+    api_client.get(base_url, HEADERS)
   end
 
   def api_post
