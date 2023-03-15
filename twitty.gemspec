@@ -16,7 +16,8 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     'bug_tracker_uri' => 'https://github.com/chatwoot/twitty/issues',
     'homepage_uri' => 'https://github.com/chatwoot/twitty',
-    'source_code_uri' => 'https://github.com/chatwoot/twitty'
+    'source_code_uri' => 'https://github.com/chatwoot/twitty',
+    'rubygems_mfa_required' => 'false'
   }
 
   # Specify which files should be added to the gem when it is released.
